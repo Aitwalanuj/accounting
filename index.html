@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NEPA Accounting ERP</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div id="loginScreen" class="login-wrap">
+    <div class="login-card">
+      <div class="brand-badge">NEPA</div>
+      <h1>Accounting ERP</h1>
+      <p class="muted">GitHub Pages edition - data stored in this browser.</p>
+      <label>Username</label>
+      <input id="loginUser" value="admin" autocomplete="username" />
+      <label>Password</label>
+      <input id="loginPass" type="password" value="admin123" autocomplete="current-password" />
+      <button id="loginBtn" class="primary full">Login</button>
+      <p id="loginMsg" class="error"></p>
+      <div class="notice small">
+        Default login: <b>admin</b> / <b>admin123</b>. This client-side login is for demo/starter use only.
+      </div>
+    </div>
+  </div>
+
+  <div id="appShell" class="app hidden">
+    <aside class="sidebar">
+      <div class="logo-block">
+        <div class="brand-badge small-badge">N</div>
+        <div>
+          <h2>NEPA ERP</h2>
+          <span>GitHub Hosted</span>
+        </div>
+      </div>
+      <nav id="nav"></nav>
+      <div class="sidebar-footer">
+        <button id="backupBtn" class="outline full">Export Backup</button>
+        <label class="outline file-btn full">Import Backup<input id="restoreFile" type="file" accept="application/json" /></label>
+        <button id="resetBtn" class="danger full">Reset Demo Data</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1 id="pageTitle">Dashboard</h1>
+          <p id="pageSubtitle">Accounting, inventory, sales and purchase starter.</p>
+        </div>
+        <div class="top-actions">
+          <select id="companyFilter"></select>
+          <select id="branchFilter"></select>
+          <button id="logoutBtn" class="outline">Logout</button>
+        </div>
+      </header>
+
+      <div class="warning-bar">
+        GitHub Pages can host this static app. Data is stored locally in the browser. For multi-user live ERP, connect a backend database such as PostgreSQL, Supabase, Firebase, or a hosted API.
+      </div>
+
+      <section id="content"></section>
+    </main>
+  </div>
+
+  <template id="modalTemplate">
+    <div class="modal-bg">
+      <div class="modal-card">
+        <div class="modal-head">
+          <h3></h3>
+          <button class="icon close-modal">x</button>
+        </div>
+        <div class="modal-body"></div>
+      </div>
+    </div>
+  </template>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
